@@ -19,7 +19,10 @@
 #include <netinet/in.h>
 #include <net/if.h>
 #include <string.h>
-
+#if (defined CONFIG_KERNEL_2_6_36)
+#define IPROUTE2
+#include "utils.h"
+#endif
 #include "libnetlink.h"
 #include "ll_map.h"
 

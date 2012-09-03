@@ -662,6 +662,7 @@ struct prefix_cacheinfo
 	__u32	valid_time;
 };
 
+#if !(defined CONFIG_KERNEL_2_6_36) || (defined IPROUTE2)
 /* The struct should be in sync with struct net_device_stats */
 struct rtnl_link_stats
 {
@@ -735,7 +736,7 @@ enum
 #define IFLA_WEIGHT IFLA_WEIGHT
 	__IFLA_MAX
 };
-
+#endif
 
 #define IFLA_MAX (__IFLA_MAX - 1)
 
@@ -772,6 +773,7 @@ enum
  */
 
 /* Subtype attributes for IFLA_PROTINFO */
+#if !(defined CONFIG_KERNEL_2_6_36) || (defined IPROUTE2)
 enum
 {
 	IFLA_INET6_UNSPEC,
@@ -782,9 +784,10 @@ enum
 	IFLA_INET6_CACHEINFO,	/* time values and max reasm size */
 	__IFLA_INET6_MAX
 };
+#endif
 
 #define IFLA_INET6_MAX	(__IFLA_INET6_MAX - 1)
-
+#if !(defined CONFIG_KERNEL_2_6_36) || (defined IPROUTE2)
 struct ifla_cacheinfo
 {
 	__u32	max_reasm_len;
@@ -792,7 +795,7 @@ struct ifla_cacheinfo
 	__u32	reachable_time;
 	__u32	retrans_time;
 };
-
+#endif
 /*****************************************************************
  *		Traffic control messages.
  ****/

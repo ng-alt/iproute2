@@ -1,3 +1,6 @@
+include ../../config.in
+include ../../config.mk
+
 TCOBJ= tc.o tc_qdisc.o tc_class.o tc_filter.o tc_util.o \
        m_police.o m_estimator.o m_action.o m_ematch.o \
        emp_ematch.yacc.o emp_ematch.lex.o
@@ -70,9 +73,10 @@ libtc.a: $(TCLIB)
 
 install: all
 	mkdir -p $(DESTDIR)/usr/lib/tc
-	install -m 0755 -s tc $(DESTDIR)$(SBINDIR)
+	install -m 0755 tc $(DESTDIR)$(SBINDIR)
+	$(STRIP) $(DESTDIR)$(SBINDIR)/tc
 	for i in $(TCSO); \
-	do install -m 755 -s $$i $(DESTDIR)/usr/lib/tc; \
+	do install -m 755 $$i $(DESTDIR)/usr/lib/tc; $(STRIP) $(DESTDIR)/usr/lib/tc/$$i; \
 	done
 
 clean:
