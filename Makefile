@@ -27,7 +27,7 @@ ADDLIB=
 #HOSTCC = gcc
 HOSTCC = $(CC)
 CCOPTS = -D_GNU_SOURCE -O2 -Wstrict-prototypes -Wall
-CFLAGS = $(CCOPTS) -I../include $(DEFINES)
+CFLAGS = $(CCOPTS) -I../include $(DEFINES) -DCONFIG_KERNEL_2_6_36
 YACCFLAGS = -d -t -v
 
 LDLIBS += -L../lib -lnetlink -lutil
