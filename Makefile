@@ -1,5 +1,5 @@
-include ../config.in
 include ../config.mk
+include ../config.in
 
 DESTDIR=$(TARGETDIR)
 SBINDIR=/usr/sbin

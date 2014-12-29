@@ -661,7 +661,7 @@ struct prefix_cacheinfo
 	__u32	preferred_time;
 	__u32	valid_time;
 };
-
+/*Foxconn modify end by Hank for fix redefined error for ARM 08/22/2012*/
 #if !(defined CONFIG_KERNEL_2_6_36) || (defined IPROUTE2)
 /* The struct should be in sync with struct net_device_stats */
 struct rtnl_link_stats
@@ -737,6 +737,7 @@ enum
 	__IFLA_MAX
 };
 #endif
+/*Foxconn modify end by Hank for fix redefined error for ARM 08/22/2012*/
 
 #define IFLA_MAX (__IFLA_MAX - 1)
 
@@ -773,6 +774,7 @@ enum
  */
 
 /* Subtype attributes for IFLA_PROTINFO */
+/*Foxconn modify start by Hank for fix redefined error for ARM 08/22/2012*/
 #if !(defined CONFIG_KERNEL_2_6_36) || (defined IPROUTE2)
 enum
 {
@@ -785,8 +787,10 @@ enum
 	__IFLA_INET6_MAX
 };
 #endif
+/*Foxconn modify end by Hank for fix redefined error for ARM 08/22/2012*/
 
 #define IFLA_INET6_MAX	(__IFLA_INET6_MAX - 1)
+/*Foxconn modify start by Hank for fix redefined error for ARM 08/22/2012*/
 #if !(defined CONFIG_KERNEL_2_6_36) || (defined IPROUTE2)
 struct ifla_cacheinfo
 {
@@ -796,6 +800,7 @@ struct ifla_cacheinfo
 	__u32	retrans_time;
 };
 #endif
+/*Foxconn modify end by Hank for fix redefined error for ARM 08/22/2012*/
 /*****************************************************************
  *		Traffic control messages.
  ****/

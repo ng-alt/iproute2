@@ -1,5 +1,5 @@
-include ../../config.in
 include ../../config.mk
+include ../../config.in
 
 TCOBJ= tc.o tc_qdisc.o tc_class.o tc_filter.o tc_util.o \
        m_police.o m_estimator.o m_action.o m_ematch.o \

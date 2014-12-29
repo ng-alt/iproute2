@@ -175,7 +175,7 @@ int get_addr_1(inet_prefix *addr, const char *name, int family)
 		return 0;
 	}
 
-#if 0       /*  removed pling 07/26/2007 */
+#if 0       /* Foxconn removed pling 07/26/2007 */
 	if (family == AF_DECnet) {
 		struct dn_naddr dna;
 		addr->family = AF_DECnet;
@@ -403,7 +403,7 @@ const char *rt_addr_n2a(int af, int len, const void *addr, char *buf, int buflen
 	case AF_INET:
 	case AF_INET6:
 		return inet_ntop(af, addr, buf, buflen);
-#if 0   /*  removed pling 07/26/2007 */
+#if 0   /* Foxconn removed pling 07/26/2007 */
 	case AF_IPX:
 		return ipx_ntop(af, addr, buf, buflen);
 	case AF_DECnet:
